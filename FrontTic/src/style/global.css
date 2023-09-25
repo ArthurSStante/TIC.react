@@ -19,6 +19,6 @@
     cursor: pointer;
   }
   
-  .dropdown:hover .dropdown-menu {
+  .dropdown .dropdown-menu {
     display: block;
   }

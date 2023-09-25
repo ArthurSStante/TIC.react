@@ -1,6 +1,6 @@
 import {useLocation} from 'react-router-dom'
 import {useState, useEffect} from 'react'
-import {MdInventory2, MdReorder} from 'react-icons/md'
+import {MdInventory2, MdReorder, MdClose} from 'react-icons/md'
 import '../style/ProdutoCads.css'
 import Menu from './menu';
 import '../style/global.css'
@@ -49,7 +49,8 @@ export function ProdutoCads() {
         }
         try{
           const produtoCadastrado = await fetch(`http://localhost:3000/products`, {
-          headers: {
+            method : 'POST',
+            headers: {
             'Content-Type': 'application/json'
           },
           body: JSON.stringify(produto)
@@ -71,14 +72,14 @@ export function ProdutoCads() {
     return(
       <>    
       <header className="flex h-[100px] container-header">
-      <div className="w-[5em] h-[5em]">
-        <div className={`menu-hamburguer ${isOpen ? 'open' : ''}`}>
-        <button onClick={toggleMenu} className="menu-icon"></button>
-          <div className="bar">
-            <Menu username={username}/> 
-          </div>
+      <div className="dropdown w-[5em] h-[5em]">
+        <button onClick={toggleMenu} className="dropdown-button bg-inherit text-black w-[5em] mt-[23px] p-0">
+          { isOpen ? (<MdReorder size={60}/>) : (<MdClose size={60}/>)}
+        </button>
+        <div className="flex-col dropdown-menu" id="menu-esc">
+          { !isOpen && (<Menu username={username}/>)}
         </div>
-      </div>  
+      </div>
       <span className="text-left font-semibold text-[25px] mt-[50px] container-title-C" id="title">Cadastro De Produto</span>
       </header> 
       <div className="ml-28">
