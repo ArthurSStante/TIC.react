@@ -1,0 +1,50 @@
+
+.container-header{
+  background: rgb(0,212,255);
+  background: linear-gradient(90deg, rgba(0,212,255,1) 1%, rgba(136,255,217,1) 80%);
+  box-shadow: 0px 2px 5px rgba(39, 39, 39, 0.6);  
+}
+.container-C{
+  background-color: rgba(239, 236, 210, 1); ;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset; 
+}
+.container-button-C{
+  background: rgba(0,212,255,1);
+}
+.container-button-C:hover{
+  background:  rgb(165 243 252);
+}
+.container-form{
+background-color: rgb(243, 243, 243);
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+.container-title-C{
+  margin-bottom: 0px;
+  height: 1.5em;
+  margin-top: 1.3em;
+}
+
+#menu-esc:hover{
+  display: block;
+}
+
+.menu-hamburguer {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  transition: left 0.3s ease-in-out;
+}
+.menu-icon {
+  cursor: pointer;
+  padding: 20px;
+  color: white;
+}
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+}

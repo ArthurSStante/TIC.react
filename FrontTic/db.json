@@ -1,0 +1,30 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "username": "admin",
+        "password": "123"
+      },
+      {
+        "id": 2,
+        "username": "user",
+        "password": "123"
+      }
+    ],
+    "products": [
+      {
+        "name": "asasd",
+        "description": "sadasd",
+        "price": "12",
+        "qty": "150",
+        "id": 1
+      },
+      {
+        "name": "Maça",
+        "description": "Dourada",
+        "price": "12",
+        "qty": "150",
+        "id": 2
+      }
+    ]
+}
