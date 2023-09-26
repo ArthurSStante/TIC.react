@@ -73,70 +73,76 @@ export function ProdutoCads() {
       <>    
       <header className="flex h-[100px] container-header">
       <div className="dropdown w-[5em] h-[5em]">
-        <button onClick={toggleMenu} className="dropdown-button bg-inherit text-black w-[5em] mt-[23px] p-0">
-          { isOpen ? (<MdReorder size={60}/>) : (<MdClose size={60}/>)}
+        <button onClick={toggleMenu} className="dropdown-button bg-inherit text-black w-[5em] mt-[28px] p-0">
+          { isOpen ? (<MdReorder size={50}/>) : (<MdClose size={50}/>)}
         </button>
         <div className="flex-col dropdown-menu" id="menu-esc">
           { !isOpen && (<Menu username={username}/>)}
         </div>
       </div>
-      <span className="text-left font-semibold text-[25px] mt-[50px] container-title-C" id="title">Cadastro De Produto</span>
+      <span className="text-left font-semibold text-[25px] mt-[50px] container-title-C" id="title">Cadastro De Produtos</span>
       </header> 
-      <div className="ml-28">
-        <div className='flex items-center mb-[-20px]'><MdInventory2 size={30}/> <h1 className='text-[30px] pl-[5px]'>Novos Produtos</h1></div>
-        <div className='mb-[10px] ml-[5px]'>Estoque</div>
+      <div className="ml-[540px]">
+        <div className='flex flex-col'>
+          <div className='flex items-center mb-[-20px]'><MdInventory2 size={30}/> <h1 className='font-normal text-[30px] pl-[5px]'>Novos Produtos</h1></div>
+          <div className='mb-[1px] mr-5'>Nova entrada no Estoque</div>
+        </div>
       </div>
-          <div className="ml-28 mt-16 max-w-6xl">
-            <div id="dados" className='w-[1500px] rounded-tl-[5px] rounded-tr-[5px] flex items-center container-C '> 
+          <div className="mt-16 flex flex-col items-center">
+            <div id="dados" className='w-[800px] rounded-tl-[20px] rounded-tr-[20px] flex items-center container-C '> 
             <MdInventory2 size={20} className='ml-[20px]'/> <h3 className='text-[20px] ml-[3px]'> Dados Dos Produto</h3> </div>  
-            <form onSubmit={handleSubmit} className="w-[1276px] h-[350px] rounded-bl-[5px] rounded-br-[5px] pt-[40px] px-[7em] container-form">
-              <div className='flex flex-row flex-wrap gap-10'>
-                  <div className="w-50 h-16 ">
-                        <label htmlFor="nome" className="text-sm font-bold mb-2 mr-2 ">
-                          Nome    
-                        </label>
-                        <input type="text" id="nome" value={nome} 
-                                onChange={ (e) => setNome(e.target.value) } 
-                                className="mb-2 w-[314px] h-8 bg-white rounded-[5px] shadow-inner border border-black border-opacity-50 text-black" />
-                  </div>
-                    <div  className="w-50 h-16">
-                      <label htmlFor="categoria" className="text-sm font-bold mb-2 mr-2">
-                        Categoria
-                      </label>
-                        <input type='text' id="categoria" value={categoria}
-                                onChange={ (e) => setCategoria(e.target.value) }
-                                className="mb-2 w-[314px] h-8 bg-white rounded-[5px] shadow-inner border border-black border-opacity-50 text-black" />
+            <form onSubmit={handleSubmit} className="w-[576px] h-[490px] rounded-bl-[20px] rounded-br-[20px] pt-[40px] px-[7em] container-form">
+              <div className='flex flex-col items-center'>
+                  <div className='flex flex-col items-center gap100 '>
+                    <div className="w-8/12 ">
+                          <label htmlFor="nome" className="text-sm font-bold mb-2 mr-2 ">
+                            Nome    
+                          </label>
+                          <input type="text" id="nome" value={nome} 
+                                  onChange={ (e) => setNome(e.target.value) } 
+                                  className="mb-2 w-[314px] h-8 bg-white rounded-[5px] shadow-inner border border-black border-opacity-50 text-black" />
                     </div>
-                  <div  className="w-50 h-16">
-                    <label htmlFor="dt_validade" className="text-sm font-bold mb-2 mr-2">
-                        Data Validade
-                    </label>
-                    <input type='text' id="dt_validade" value={dt_validade}
-                                onChange={ (e) => setDt_Validade(e.target.value) }
-                                className="mb-2 w-[314px] h-8 bg-white rounded-[5px] shadow-inner border border-black border-opacity-50 text-black" />
-                  </div>
-                  <div  className="w-50 h-16">
-                    <label htmlFor="qtde" className="text-sm font-bold mb-2 mr-2 ">
-                        Quantidade 
-                    </label>
-                    <input type="number" id="qtde" value={qtde}
-                                onChange={ (e) => setQtde(Number(e.target.value))}
-                                className="mb-2 w-[314px] h-8 bg-white rounded-[5px] shadow-inner border border-black border-opacity-50 text-black" />
-                  </div>
-                  <div className="w-50 h-16">
-                    <label htmlFor="dt_chegada" className="text-sm font-bold mb-2 mr-2"> 
-                        Data De Chegada
+                      <div  className="w-8/12 ">
+                        <label htmlFor="categoria" className="text-sm font-bold mb-2 mr-2">
+                          Categoria
+                        </label>
+                          <input type='text' id="categoria" value={categoria}
+                                  onChange={ (e) => setCategoria(e.target.value) }
+                                  className="mb-2 w-[314px] h-8 bg-white rounded-[5px] shadow-inner border border-black border-opacity-50 text-black" />
+                      </div>
+                    <div  className="w-8/12 ">
+                      <label htmlFor="dt_validade" className="text-sm font-bold mb-2 mr-2">
+                          Data Validade
                       </label>
-                      <input type='text' id="dt_chegada" value={dt_chegada}
-                                onChange={ (e) => setDt_chegada(e.target.value) }
-                                className="mb-2 w-[314px] h-8 bg-white rounded-[5px] shadow-inner border border-black border-opacity-50 text-black" />
+                      <input type='text' id="dt_validade" value={dt_validade}
+                                  onChange={ (e) => setDt_Validade(e.target.value) }
+                                  className="mb-2 w-[314px] h-8 bg-white rounded-[5px] shadow-inner border border-black border-opacity-50 text-black" />
+                    </div>
+                    <div  className="w-8/12 ">
+                      <label htmlFor="qtde" className="text-sm font-bold mb-2 mr-2 ">
+                          Quantidade 
+                      </label>
+                      <input type="number" id="qtde" value={qtde}
+                                  onChange={ (e) => setQtde(Number(e.target.value))}
+                                  className="mb-2 w-[314px] h-8 bg-white rounded-[5px] shadow-inner border border-black border-opacity-50 text-black" />
+                    </div>
+                    <div className="w-8/12 ">
+                      <label htmlFor="dt_chegada" className="text-sm font-bold mb-2 mr-2"> 
+                          Data De Chegada
+                        </label>
+                        <input type='text' id="dt_chegada" value={dt_chegada}
+                                  onChange={ (e) => setDt_chegada(e.target.value) }
+                                  className="mb-2 w-[314px] h-8 bg-white rounded-[5px] shadow-inner border border-black border-opacity-50 text-black" />
+                    </div>
                   </div>
-              </div>
-              <div className='flex mr-auto'>
-              <button type="submit" id="buttonC" 
-                    className="w-[135px] h-[45px] rounded-[5px] border border-black border-opacity-50 mb-0 mt-[5em] container-button-C">
-                    Cadastrar
-              </button>
+              
+                  <div className=''>
+                    <button type="submit" id="buttonC" 
+                          className=" rounded-[5px] border border-black border-opacity-50 mb-0 mt-[5em] container-button-C">
+                          Cadastrar
+                    </button>
+                  </div>
+
               </div>
             </form>
           </div>

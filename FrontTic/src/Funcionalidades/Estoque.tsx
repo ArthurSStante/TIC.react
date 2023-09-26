@@ -146,12 +146,12 @@ export function Estoque() {
                 { !isOpen && (<Menu username={username}/>)}
               </div>
             </div>
-                <span className="text-left font-semibold text-[25px] mt-[50]px container-title-C" id="title">Casdastro De Produto</span>
+                <span className="text-left font-semibold text-[25px] mt-[50]px container-title-C" id="title">Atualização e Produtos</span>
             </header> 
             <div className="ml-[540px]">
                 <div className='flex flex-col '>
-                  <div className='flex items-center mb-[-20px]'><MdEditDocument size={30}/> <h1 className='font-normal text-[30px] pl-[5px]'> Atualizar Produtos </h1></div>
-                  <div className='mb-[1px] mr-5'>Produtos</div>  
+                  <div className='flex items-center mb-[-20px]'><MdEditDocument size={30}/> <h1 className='font-normal text-[30px] pl-[5px]'> Estoque </h1></div>
+                  <div className='mb-[1px] mr-5'>Atualizar Produtos</div>  
                 </div> 
             </div>  
             <div className="mt-16 flex flex-col items-center">
@@ -161,7 +161,7 @@ export function Estoque() {
                 <form onSubmit={handleAtualizar} className="w-[576px] h-[350px] rounded-bl-[20px] rounded-br-[20px] pt-[40px] px-[7em] container-form">
                   <div className="flex flex-col items-center">
                       <div id="Camp" className='flex flex-col items-center '>   
-                        <div className="w-8/12 h-16 ">
+                        <div className="w-8/12 ">
                               <label htmlFor="nome" className="text-sm font-bold mb-2 mr-2 ">
                                   Nome    
                               </label>
@@ -169,7 +169,7 @@ export function Estoque() {
                                   onChange={ (e) => setNome(e.target.value) } 
                                   className="outline-none mb-2 w-[314px] h-8 bg-white rounded-[5px] shadow-inner border border-black border-opacity-50 text-black"/>
                           </div>
-                          <div className="w-8/12 h-16">
+                          <div className="w-8/12 ">
                               <label htmlFor="categoria" className="text-sm font-bold mb-2 mr-2 mt-[1em]">
                                   Categoria
                               </label>
@@ -177,7 +177,7 @@ export function Estoque() {
                                   onChange={ (e) => setCategoria(e.target.value) }
                                   className=" outline-none mb-2 w-[314px] h-8 bg-white rounded-[5px] shadow-inner border border-black border-opacity-50 text-black" />
                           </div>
-                            <div className="w-8/12 h-16">
+                            <div className="w-8/12 ">
                               <label htmlFor="dt_validade" className="text-sm font-bold mb-2 mr-2 mt-[1em]">
                                   Data Validade
                               </label>
@@ -185,7 +185,7 @@ export function Estoque() {
                                   onChange={ (e) => setDt_Validade(e.target.value) }
                                   className="outline-none mb-2 w-[314px] h-8 bg-white rounded-[5px] shadow-inner border border-black border-opacity-50 text-black" />
                           </div>
-                          <div className="w-8/12 h-16">
+                          <div className="w-8/12 ">
                               <label htmlFor="qtde" className="text-sm font-bold mb-2 mr-2 mt-[1em]">
                                   Quantidade 
                               </label>  
@@ -193,7 +193,7 @@ export function Estoque() {
                                   onChange={ (e) => setQtde(Number(e.target.value))}
                                   className="outline-none mb-2 w-[314px] h-8 bg-white rounded-[5px] shadow-inner border border-black border-opacity-50 text-black" />
                           </div>
-                          <div className="w-8/12 h-16">
+                          <div className="w-8/12 ">
                               <label htmlFor="dt_chegada" className="text-sm font-bold mb-2 mr-2 mt-[1em]"> 
                                   Data De Chegada
                               </label>
@@ -208,27 +208,30 @@ export function Estoque() {
 
                 {/* lista de produtos dentro de uma tabela */}
                 <h2 className="flex flex-col items-center font-bold mt-[80px]"> Lista de Produtos </h2>
-                <table className=" flex flex-col items-center border border-gray-300">
+                <table className="flex flex-col items-center border-gray-300">
                 <thead>
-                    <tr className="container-table bg-gray-200">
+                    <tr className=" bg-gray-200">
                     <th className="border border-gray-300 px-4 py-2">ID</th>
                     <th className="border border-gray-300 px-4 py-2">Nome</th>
                     <th className="border border-gray-300 px-4 py-2">Categoria</th>
-                    <th className="border border-gray-300 px-4 py-2">Data De Chegada</th>
+                    <th className="border border-gray-300 px-4 py-2">Data De Validade</th>
                     <th className="border border-gray-300 px-4 py-2">Data De Chegada</th>
                     <th className="border border-gray-300 px-4 py-2">Quantidade</th>
+                    <th className="border border-gray-300 px-4 py-2">Editar</th>
+                    <th className="border border-gray-300 px-4 py-2">Excluir</th>
                     </tr>
                 </thead>
-                <tbody className='container-table'>
+                <tbody className=''>
                     {
                     vetProduct.map( (product) => (
-                        <tr key={product.id} className='flex justify-between'>
+                        <tr key={product.id} className=''>
                         <td className="border border-gray-300 px-4 py-2">{product.id}</td>
                         <td className="border border-gray-300 px-4 py-2">{product.nome}</td>
-                        <td className="border border-gray-300 px-4 py-2">{product.dt_chegada}</td>
-                        <td className="border border-gray-300 px-4 py-2">{product.dt_validade}</td>
                         <td className="border border-gray-300 px-4 py-2">{product.categoria}</td>
+                        <td className="border border-gray-300 px-4 py-2">{product.dt_validade}</td>
+                        <td className="border border-gray-300 px-4 py-2">{product.dt_chegada}</td>
                         <td className="border border-gray-300 px-4 py-2">{product.qtde}</td>
+                        
                         <td className="border border-gray-300 px-4 py-2">
                             <button className="w-[5em] bg-cyan-500" onClick={() => handleEdit(product)}> 
                             <MdMode size={20}/>
@@ -240,9 +243,7 @@ export function Estoque() {
                             </button>
                         </td>
                         </tr>
-                    ) /* fim da função dentro do map */
-                    ) /* fim do map */
-                    } {/* fim do reactjs */}
+                    ) ) }
                 </tbody>
                 </table>
     </>
