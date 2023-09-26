@@ -158,7 +158,7 @@ export function Estoque() {
                 {/* formulário para cadastro de um produto */}
                 <div id='dados' className='w-[800px] rounded-tl-[20px] rounded-tr-[20px] flex items-center container-C '>
                   <MdAutorenew size={35} className='ml-[20px]'/> <h3 className='text-[20px] ml-[5px]'>Atualização </h3>   </div>
-                <form onSubmit={handleAtualizar} className="w-[576px] h-[350px] rounded-bl-[20px] rounded-br-[20px] pt-[40px] px-[7em] container-form">
+                <form onSubmit={handleAtualizar} className="w-[576px] h-[490px] rounded-bl-[20px] rounded-br-[20px] pt-[40px] px-[7em] container-form">
                   <div className="flex flex-col items-center">
                       <div id="Camp" className='flex flex-col items-center '>   
                         <div className="w-8/12 ">
@@ -202,43 +202,51 @@ export function Estoque() {
                                   className="outline-none mb-2 w-[314px] h-8 bg-white rounded-[5px] shadow-inner border border-black border-opacity-50 text-black" />
                           </div>
                       </div>
+                      <div className=''>
+                        <button type="submit" 
+                          className=" rounded-[5px] border border-black border-opacity-50 mb-0 mt-[5em] container-button-C">
+                          Atualizar
+                        </button>
+                      </div>
                   </div>
                 </form>
             </div>
 
                 {/* lista de produtos dentro de uma tabela */}
                 <h2 className="flex flex-col items-center font-bold mt-[80px]"> Lista de Produtos </h2>
-                <table className="flex flex-col items-center border-gray-300">
-                <thead>
-                    <tr className=" bg-gray-200">
-                    <th className="border border-gray-300 px-4 py-2">ID</th>
-                    <th className="border border-gray-300 px-4 py-2">Nome</th>
-                    <th className="border border-gray-300 px-4 py-2">Categoria</th>
-                    <th className="border border-gray-300 px-4 py-2">Data De Validade</th>
-                    <th className="border border-gray-300 px-4 py-2">Data De Chegada</th>
-                    <th className="border border-gray-300 px-4 py-2">Quantidade</th>
-                    <th className="border border-gray-300 px-4 py-2">Editar</th>
-                    <th className="border border-gray-300 px-4 py-2">Excluir</th>
+
+                <div className='flex flex-col items-center '>
+                <table className="border-collapse">
+                <thead className='rounded-tl-[10px] rounded-tr-[10px] container-cor-table'>
+                    <tr className="">
+                    <th className=" px-4 py-2">ID</th>
+                    <th className=" px-4 py-2">Nome</th>
+                    <th className=" px-4 py-2">Categoria</th>
+                    <th className=" px-4 py-2">Data De Validade</th>
+                    <th className=" px-4 py-2">Data De Chegada</th>
+                    <th className=" px-4 py-2">Quantidade</th>
+                    <th className=" px-4 py-2">Editar</th>
+                    <th className=" px-4 py-2">Excluir</th>
                     </tr>
                 </thead>
                 <tbody className=''>
                     {
-                    vetProduct.map( (product) => (
-                        <tr key={product.id} className=''>
-                        <td className="border border-gray-300 px-4 py-2">{product.id}</td>
-                        <td className="border border-gray-300 px-4 py-2">{product.nome}</td>
-                        <td className="border border-gray-300 px-4 py-2">{product.categoria}</td>
-                        <td className="border border-gray-300 px-4 py-2">{product.dt_validade}</td>
-                        <td className="border border-gray-300 px-4 py-2">{product.dt_chegada}</td>
-                        <td className="border border-gray-300 px-4 py-2">{product.qtde}</td>
+                      vetProduct.map( (product) => (
+                        <tr key={product.id} className=' container-cor-tr rounded-bl-[20px] rounded-br-[20px]'>
+                        <td className="text-center px-4 py-2">{product.id}</td>
+                        <td className="text-center px-4 py-2">{product.nome}</td>
+                        <td className="text-center px-4 py-2">{product.categoria}</td>
+                        <td className="text-center px-4 py-2">{product.dt_validade}</td>
+                        <td className="text-center px-4 py-2">{product.dt_chegada}</td>
+                        <td className="text-center px-4 py-2">{product.qtde}</td>
                         
-                        <td className="border border-gray-300 px-4 py-2">
-                            <button className="w-[5em] bg-cyan-500" onClick={() => handleEdit(product)}> 
+                        <td className=" px-4 py-2">
+                            <button className="border-black border-opacity-50 container-button-C" onClick={() => handleEdit(product)}> 
                             <MdMode size={20}/>
                             </button>
                         </td>
-                        <td className="border border-gray-300 px-4 py-2">
-                            <button className="w-[5em] bg-cyan-500" onClick={() => handleRemove(product.id)}> 
+                        <td className=" px-4 py-2">
+                            <button className="border-black border-opacity-50 container-button-C" onClick={() => handleRemove(product.id)}> 
                             <MdOutlineDeleteOutline size={20}/>
                             </button>
                         </td>
@@ -246,6 +254,7 @@ export function Estoque() {
                     ) ) }
                 </tbody>
                 </table>
+              </div>
     </>
     )
 }

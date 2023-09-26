@@ -137,7 +137,7 @@ export function ProdutoCads() {
                   </div>
               
                   <div className=''>
-                    <button type="submit" id="buttonC" 
+                    <button type="submit" 
                           className=" rounded-[5px] border border-black border-opacity-50 mb-0 mt-[5em] container-button-C">
                           Cadastrar
                     </button>

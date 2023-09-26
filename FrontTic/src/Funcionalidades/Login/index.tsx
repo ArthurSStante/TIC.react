@@ -71,7 +71,7 @@ export default function Login(){
                         onChange={e => setPassword(e.target.value)}/>
                     </div>
                     {/*Enviar*/}
-                    <button type="submit" className="border-transparent container-button-login"> ENTRAR </button> 
+                    <button type="submit" className="border-black border-opacity-50 container-button-login"> ENTRAR </button> 
     
                     <p className="container-p-login"> Não tem cadastro? <a className="text-black" href="CadastroUsuairo.html"> <strong > Cadastrar-se </strong> </a></p>
                         {showError && (

@@ -14,11 +14,35 @@
   "products": [
     {
       "nome": "Maçã",
+      "dt_chegada": "26/09/2022",
+      "categoria": "Alimentos",
+      "dt_validade": "11/09/2023",
+      "qtde": 0,
+      "id": 1
+    },
+    {
+      "nome": "Maçã",
       "categoria": "Alimentos",
       "dt_chegada": "26/09/2023",
       "dt_validade": "11/09/2023",
       "qtde": 50,
-      "id": 1
+      "id": 2
+    },
+    {
+      "nome": "Maçã",
+      "dt_chegada": "26/09/2024",
+      "categoria": "Alimentos",
+      "dt_validade": "11/09/2023",
+      "qtde": 0,
+      "id": 3
+    },
+    {
+      "nome": "",
+      "categoria": "",
+      "dt_chegada": "",
+      "dt_validade": "",
+      "qtde": 0,
+      "id": 4
     }
   ]
 }
