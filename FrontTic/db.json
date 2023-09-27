@@ -37,12 +37,12 @@
       "id": 3
     },
     {
-      "nome": "",
-      "categoria": "",
-      "dt_chegada": "",
-      "dt_validade": "",
-      "qtde": 0,
-      "id": 4
+      "nome": "Teste",
+      "categoria": "vava",
+      "dt_chegada": "26/09/2029",
+      "dt_validade": "19/07/2025",
+      "qtde": 10,
+      "id": 5
     }
   ]
 }
